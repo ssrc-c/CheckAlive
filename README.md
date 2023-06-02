@@ -24,5 +24,6 @@
 执行
 
 ``` python CheckAlive.py -f url.txt ```
+
 ![image](https://github.com/chenchen-cpu/CheckAlive/assets/73785589/d5675103-e6d9-48af-9d2b-d6e64954215c)
 ![image](https://github.com/chenchen-cpu/CheckAlive/assets/73785589/6a7c7856-69b2-4c58-b5b7-e8d9b875769d)
