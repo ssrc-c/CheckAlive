@@ -50,7 +50,7 @@ def check_urls(file):
     try:
         urls = [url.strip() if url.startswith("http://") or url.startswith("https://") else "http://" + url.strip() for url in open(file, "r", encoding="utf-8")]
     except Exception as e:
-        print("打开domain.txt文件失败：", e)
+        print("打开%s文件失败：%s" %(file, e))
         return
     print(Fore.YELLOW+"[INFO]共%s个网站" % len(urls))
     lock = threading.Lock()  # 创建互斥锁
