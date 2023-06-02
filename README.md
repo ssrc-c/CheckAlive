@@ -19,7 +19,7 @@
 > pip install -r requirements.txt
 
 ## 工具使用
-将url放在txt中
+将url放在txt中，带http或者不带都行
 ![image](https://github.com/chenchen-cpu/CheckAlive/assets/73785589/fe60b2fb-0df9-44d9-bf38-9e013e127e4b)
 执行
 
