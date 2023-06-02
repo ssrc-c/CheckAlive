@@ -1,0 +1,4 @@
+aiohttp
+argparse
+requests
+colorama
