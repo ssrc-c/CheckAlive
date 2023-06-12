@@ -1,4 +1,4 @@
-import asyncio, aiohttp, time, threading, argparse
+import asyncio, aiohttp, time, threading, argparse, os
 from colorama import init,Fore
 init(autoreset=True)
 
@@ -71,6 +71,12 @@ def check_urls(file, proxy, xcode, addcode):
         proxy = "http://" + proxy
     else:
         proxy = None
+
+    if os.path.exists("alive.txt"):
+        os.remove("alive.txt")
+    if os.path.exists("die.txt"):
+        os.remove("die.txt")
+
     try:
         urls = [url.strip() if url.startswith("http://") or url.startswith("https://") else "http://" + url.strip() for url in open(file, "r", encoding="utf-8")]
     except Exception as e:
@@ -107,7 +113,7 @@ def check_urls(file, proxy, xcode, addcode):
                             with open('die.txt', 'a', encoding='utf-8') as f:
                                 f.write(url + '\n')
                     else:
-                        await asyncio.sleep(0.7)  # 重试之前等待1秒
+                        await asyncio.sleep(0.8)  # 重试之前等待1秒
                 except Exception as e:
                     print(Fore.RED+"[-]请求异常：%s %s" %(url, repr(e)))
                     with lock:  
